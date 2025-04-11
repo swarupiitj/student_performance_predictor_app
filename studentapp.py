@@ -5,18 +5,13 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-# Streamlit UI
+
 def main():
-    #st.title("Student Performance Prediction")
     st.write("<h1 style='text-align: center; color: blue;'>Student Performance Prediction</h1>", unsafe_allow_html=True)
     # Load dataset
     df = pd.read_csv("Student_Performance.csv")
-    
-    # Display dataset information
     #st.subheader("Dataset Preview")
     #st.write(df.head())
-    
-    # Encode categorical variable
     df['Extracurricular Activities'] = LabelEncoder().fit_transform(df['Extracurricular Activities'])
     
     # Define features and target variable
